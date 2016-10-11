@@ -1,0 +1,31 @@
+<h3 class="w3-padding-bottom">Teams</h3>
+<div ng-controller="TeamsController">
+   <form class="w3-padding-bottom w3-form">
+   <div class="w3-row-padding">
+      <div class="w3-half">
+         <label class="w3-label"> Name</label>
+         <input class="w3-input" type="text" ng-model="newTeam.name"/>
+      </div>
+      <button class="w3-green w3-btn" type="submit" ng-click="addTeam()">Add New Team</button>
+   </div>
+   </form>
+
+      <table border="1" class="w3-table w3-half">
+         <thead>
+            <tr>
+               <th>Team Name</th>
+               <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="team in teams">
+                  <td ng-bind="team.name"></td>
+                  <td><button class="w3-red w3-btn" ng-click="removeTeam($index)">Remove Team</button></td>
+               </tr>
+             <!--   <tr ng-repeat = 'team in teams track by $index'>
+                  <td><a href="#/{{team.name}}" ng-bind = 'team.name'></a></td>
+                  <td><button class="w3-red w3-btn" ng-click='removeTeam($index)'>Remove</button></td>
+               </tr> -->
+         </tbody>
+      </table>
+</div>

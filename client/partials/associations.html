@@ -1,0 +1,31 @@
+<h3 class="w3-padding-top">Associations</h3>
+
+<div ng-controller="AssociationsController">
+   <form>
+      <select ng-model="newAssoc.playerIdx" ng-init="newAssoc.playerIdx = 0">
+         <option ng-repeat="player in players" value={{$index}} ng-bind="player.name"></option>
+      </select>
+      <select ng-model="newAssoc.team" ng-init="newAssoc.team = teams[0].name">
+         <option ng-repeat="team in teams" value={{team.name}} ng-bind="team.name"></option>
+      </select>
+    
+      <button class="w3-green w3-btn" type="submit" ng-click="addPlayerToTeam()">Assign Player To Team</button>
+   </form>
+
+   <table border="1" class="w3-table w3-half">
+      <thead>
+         <tr>
+            <th>Name</th>
+            <th>Team</th>
+         </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="player in players">
+         <td ng-bind="player.name"></td>
+         <td ng-bind="player.team"></td>
+         <td><button class="w3-red w3-btn" ng-click="removePlayerFromTeam($index)">Clear Assignment</button></td>
+      </tr>
+      </tbody>
+   </table>
+  
+</div>

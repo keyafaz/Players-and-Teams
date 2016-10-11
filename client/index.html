@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<style type="text/css">
+	a{padding-right: 30px;}
+</style>
+	<title>INDEX</title>
+
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+	<script type="text/javascript" src="./js/factories/playerFactory.js"></script>
+	<script type="text/javascript" src="./js/factories/teamFactory.js"></script>
+	<script type="text/javascript" src="./js/controllers/playersController.js"></script>
+	<script type="text/javascript" src="./js/controllers/teamsController.js"></script>
+	<script type="text/javascript" src="./js/controllers/associationsController.js"></script>
+	<script type="text/javascript" src='./js/config/routes.js'></script>
+	
+
+</head>
+<body>
+<h1 class="w3-center">Players&&Teams</h1>
+	<a class="w3-btn w3-white w3-padding w3-hover-light-grey" href="#/players">Players</a>
+	<a class="w3-btn w3-white w3-padding w3-hover-light-grey" href="#/teams">Teams</a>
+	<a class="w3-btn w3-white w3-padding w3-hover-light-grey" href="#/associations">Associations</a>
+	 <div ng-view=""></div>
+</body>
+</html>
